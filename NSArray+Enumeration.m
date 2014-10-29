@@ -23,7 +23,7 @@
     
 }
 
-- (NSArray *)selectWithComparitor:(BOOL (^) (id object))operation {
+- (NSArray *)selectWithComparator:(BOOL (^) (id object))operation {
     
     NSMutableArray *processingArray = [[NSMutableArray alloc] init];
     

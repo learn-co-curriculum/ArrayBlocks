@@ -26,7 +26,7 @@
     
     NSLog(@"%@",resultsArray);
     
-    NSArray *filteredResultsArray = [resultsArray selectWithComparitor:^BOOL(id object) {
+    NSArray *filteredResultsArray = [resultsArray selectWithComparator:^BOOL(id object) {
         
         if ([object integerValue]%2 == 0)
         {

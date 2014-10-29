@@ -11,6 +11,6 @@
 @interface NSArray (Enumeration)
 
 - (NSArray *)mapWithOperation:(id (^) (id object))operation;
-- (NSArray *)selectWithComparitor:(BOOL (^) (id object))operation;
+- (NSArray *)selectWithComparator:(BOOL (^) (id object))operation;
 
 @end
