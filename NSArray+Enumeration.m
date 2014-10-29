@@ -14,9 +14,9 @@
     
     NSMutableArray *processingArray = [[NSMutableArray alloc] init];
     
-    for (NSInteger i = 0; i < [self count]; i++)
+    for (id object in self)
     {
-        [processingArray addObject:operation(self[i])];
+        [processingArray addObject:operation(object)];
     }
     
     return processingArray;
@@ -27,10 +27,10 @@
     
     NSMutableArray *processingArray = [[NSMutableArray alloc] init];
     
-    for (NSInteger i = 0; i < [self count]; i++)
+    for (id object in self)
     {
-        if (operation(self[i])) {
-            [processingArray addObject:self[i]];
+        if (operation(object)) {
+            [processingArray addObject:object];
         }
     }
     

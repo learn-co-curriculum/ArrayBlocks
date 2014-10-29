@@ -24,6 +24,10 @@
         return @([(NSNumber *)object integerValue] + 1);
     }];
     
+    [testArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSLog(@"%@",@([(NSNumber *)obj integerValue] + 1));
+    }];
+    
     NSLog(@"%@",resultsArray);
     
     NSArray *filteredResultsArray = [resultsArray selectWithComparator:^BOOL(id object) {
@@ -38,7 +42,13 @@
         }
     }];
     
-    NSLog(@"%@",filteredResultsArray);
+    NSPredicate *evenPredicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings){
+        return ([evaluatedObject integerValue]%2 == 0);
+    }];
+    
+    NSArray *filteredResultsArrayTwo = [resultsArray filteredArrayUsingPredicate:evenPredicate];
+    
+    NSLog(@"%@",filteredResultsArrayTwo);
 
     // Do any additional setup after loading the view, typically from a nib.
 }
