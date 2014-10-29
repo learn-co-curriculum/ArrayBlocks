@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NSArray+Enumeration.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSArray *testArray = @[@1,@2,@3,@4,@5];
+    
+    NSArray *resultsArray = [testArray mapWithOperation:^id(id object) {
+        return @([(NSNumber *)object integerValue] + 1);
+    }];
+    
+    NSLog(@"%@",resultsArray);
+    
+    NSArray *filteredResultsArray = [resultsArray selectWithComparitor:^BOOL(id object) {
+        
+        if ([object integerValue]%2 == 0)
+        {
+            return YES;
+        }
+        else
+        {
+            return NO;
+        }
+    }];
+    
+    NSLog(@"%@",filteredResultsArray);
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
