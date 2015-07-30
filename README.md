@@ -1,7 +1,4 @@
----
-tags: blocks, NSArray
-languages: objc
----
+
 
 #ArrayBlocks
 
