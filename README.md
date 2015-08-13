@@ -46,3 +46,9 @@ Go!
 
 ##Advanced
 Now add in the BOOL* argument for `mapWithOperation:`. Note: This will not further your understanding of blocks, but it will teach you a little bit more about memory addresses.
+
+Further reading for ```BOOL *```:  
+<a href="http://www.drdobbs.com/mobile/pointers-in-objective-c/225700236?pgno=1">
+Blog post</a>  
+<a href="http://stackoverflow.com/questions/6546214/when-we-need-pointer-of-bool-variable-in-objective-c/6546351#6546351">
+Stack overflow post</a>  
