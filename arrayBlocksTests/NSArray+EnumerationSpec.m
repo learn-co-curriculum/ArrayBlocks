@@ -24,6 +24,7 @@ describe(@"NSArray+Enumeration", ^{
         orderedArray = @[@1, @2, @3, @4, @5, @6];
         evenArray = @[@2, @4, @6, @8, @10];
         nameArray = @[@"Jim", @"Tom", @"Tim", @"Joe"];
+        
     });
     
     describe(@"mapWithOperation:", ^{
@@ -46,73 +47,51 @@ describe(@"NSArray+Enumeration", ^{
             expect([testArray count]).to.equal([orderedArray count]);
             expect(testArray).to.equal(@[@2, @4, @6, @8, @10, @12]);
             expect(testArray).toNot.equal(@[@1, @2, @3, @4, @5, @6]);
+            expect(testArray).toNot.equal(@[]);
+
             
             expect(simpleArray).to.beAKindOf([NSArray class]);
             expect([simpleArray count]).to.equal([orderedArray count]);
             expect(simpleArray).to.equal(orderedArray);
+            expect(simpleArray).toNot.equal(@[]);
+
             
             expect(stringArray).to.beAKindOf([NSArray class]);
             expect([stringArray count]).to.equal([nameArray count]);
             expect(stringArray).to.equal(@[@"Jim loves to code.",
-                                           @"Tim loves to code.",
                                            @"Tom loves to code.",
+                                           @"Tim loves to code.",
                                            @"Joe loves to code."]);
             expect(stringArray).toNot.equal(@[@"Jim", @"Tom", @"Tim", @"Joe"]);
+            expect(stringArray).toNot.equal(@[]);
         });
     });
     
     
     describe(@"selectWithComparator:", ^{
         
-        it(@"Should iterate over an array similiar to the predicateWithBlock: method and return a NSArray.  The argument here is a block which will return a BOOL evaluating the object in self (self being the array calling this method.  The new array will be filetered based upon the impleentation of this method and how it handles the YES/NO being returned.", ^{
+        it(@"Should iterate over an array similiar to the predicateWithBlock: method and return a NSArray.  The argument here is a block which will return a BOOL evaluating the object in self (self being the array calling this method).  The new array will be filetered based upon the impleentation of this method and how it handles the YES/NO being returned.", ^{
            
-           
-           
-           
-           
-           
-//            NSArray *filteredResultsArray = [resultsArray selectWithComparator:^BOOL(id object) {
-//                
-//                if ([object integerValue]%2 == 0)
-//                {
-//                    return YES;
-//                }
-//                else
-//                {
-//                    return NO;
-//                }
-//            }];
+           NSArray *filterArray = [orderedArray selectWithComparator:^BOOL(id object) {
+               return ([object integerValue] * 2 == 10);
+           }];
+            
+            NSArray *threeLetterNameArray = [nameArray selectWithComparator:^BOOL(id object) {
+                return ([object length] == 3);
+            }];
+            
+            expect(filterArray).to.beAKindOf([NSArray class]);
+            expect([filterArray count]).to.equal(1);
+            expect(filterArray).to.equal(@[@5]);
+            expect(filterArray).toNot.equal(@[@1, @2, @3, @4, @5, @6]);
+            expect(filterArray).toNot.equal(@[]);
 
-           
-           
-           
-           
+            expect(threeLetterNameArray).to.beAKindOf([NSArray class]);
+            expect([threeLetterNameArray count]).to.equal(4);
+            expect(threeLetterNameArray).to.equal(@[@"Jim", @"Tom", @"Tim", @"Joe"]);
+            expect(threeLetterNameArray).toNot.equal(@[]);
            });
-        
-        
     });
-    
-    
-    
-    
-//    - (NSArray *)selectWithComparator:(BOOL (^) (id object))operation {
-//        
-//        NSMutableArray *processingArray = [[NSMutableArray alloc] init];
-//        
-//        for (id object in self)
-//        {
-//            if (operation(object)) {
-//                [processingArray addObject:object];
-//            }
-//        }
-//        
-//        return processingArray;
-//    }
-    
-    
-    
-    
-    
 });
 
 SpecEnd
