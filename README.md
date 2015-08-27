@@ -34,9 +34,7 @@ Some additional notes:
 
 1) For our equivalent of `enumerateObjectsUsingBlock` do not concern yourself with adding in the `BOOL *` argument for the basic version.
 
-2) There are no tests for this lab; so in order to know it has worked, make sure you try running you methods with some dummy data of your own.
-
-3) `selectWithBlock:` should be built as an instance method, and should take the predictate block directly, rather than an `NSPredicate`.
+2) `selectWithBlock:` should be built as an instance method, and should take the predictate block directly, rather than an `NSPredicate`.
 
 Go!
 
