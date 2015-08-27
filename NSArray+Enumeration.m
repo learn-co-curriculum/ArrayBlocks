@@ -20,7 +20,6 @@
     }
     
     return processingArray;
-    
 }
 
 - (NSArray *)selectWithComparator:(BOOL (^) (id object))operation {
