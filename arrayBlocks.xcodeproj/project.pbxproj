@@ -15,6 +15,7 @@
 		317BBDC31A012AD400E50696 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317BBDC11A012AD400E50696 /* LaunchScreen.xib */; };
 		317BBDCF1A012AD400E50696 /* arrayBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 317BBDCE1A012AD400E50696 /* arrayBlocksTests.m */; };
 		317BBDDD1A012D8100E50696 /* NSArray+Enumeration.m in Sources */ = {isa = PBXBuildFile; fileRef = 317BBDDC1A012D8100E50696 /* NSArray+Enumeration.m */; };
+		5A1D80B8ED9537D6477E960B /* libPods-arrayBlocksTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4A62FC37AA69B32DC15D4 /* libPods-arrayBlocksTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D353D2C62845F3CB30EF47D /* Pods-arrayBlocksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arrayBlocksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-arrayBlocksTests/Pods-arrayBlocksTests.debug.xcconfig"; sourceTree = "<group>"; };
 		317BBDAF1A012AD400E50696 /* arrayBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arrayBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317BBDB31A012AD400E50696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		317BBDB41A012AD400E50696 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 		317BBDCE1A012AD400E50696 /* arrayBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = arrayBlocksTests.m; sourceTree = "<group>"; };
 		317BBDDB1A012D8100E50696 /* NSArray+Enumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Enumeration.h"; path = "../NSArray+Enumeration.h"; sourceTree = "<group>"; };
 		317BBDDC1A012D8100E50696 /* NSArray+Enumeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Enumeration.m"; path = "../NSArray+Enumeration.m"; sourceTree = "<group>"; };
+		CD73DBA900D7AC792039F257 /* Pods-arrayBlocksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arrayBlocksTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-arrayBlocksTests/Pods-arrayBlocksTests.release.xcconfig"; sourceTree = "<group>"; };
+		FAC4A62FC37AA69B32DC15D4 /* libPods-arrayBlocksTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-arrayBlocksTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1D80B8ED9537D6477E960B /* libPods-arrayBlocksTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +74,8 @@
 				317BBDB11A012AD400E50696 /* arrayBlocks */,
 				317BBDCB1A012AD400E50696 /* arrayBlocksTests */,
 				317BBDB01A012AD400E50696 /* Products */,
+				3FC58CC1123A304B386F8EF3 /* Pods */,
+				9FDA81DD34C328C65107C17D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +131,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3FC58CC1123A304B386F8EF3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D353D2C62845F3CB30EF47D /* Pods-arrayBlocksTests.debug.xcconfig */,
+				CD73DBA900D7AC792039F257 /* Pods-arrayBlocksTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9FDA81DD34C328C65107C17D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAC4A62FC37AA69B32DC15D4 /* libPods-arrayBlocksTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 317BBDD51A012AD400E50696 /* Build configuration list for PBXNativeTarget "arrayBlocksTests" */;
 			buildPhases = (
+				E61AFF82C59385D8881F2DAF /* Check Pods Manifest.lock */,
 				317BBDC41A012AD400E50696 /* Sources */,
 				317BBDC51A012AD400E50696 /* Frameworks */,
 				317BBDC61A012AD400E50696 /* Resources */,
+				0D7B7AFEA759478082E99D6F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +244,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D7B7AFEA759478082E99D6F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-arrayBlocksTests/Pods-arrayBlocksTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E61AFF82C59385D8881F2DAF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		317BBDAB1A012AD400E50696 /* Sources */ = {
@@ -367,6 +426,7 @@
 		};
 		317BBDD61A012AD400E50696 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D353D2C62845F3CB30EF47D /* Pods-arrayBlocksTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -386,6 +446,7 @@
 		};
 		317BBDD71A012AD400E50696 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD73DBA900D7AC792039F257 /* Pods-arrayBlocksTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -418,6 +479,7 @@
 				317BBDD41A012AD400E50696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		317BBDD51A012AD400E50696 /* Build configuration list for PBXNativeTarget "arrayBlocksTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +488,7 @@
 				317BBDD71A012AD400E50696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
