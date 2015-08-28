@@ -1,5 +1,4 @@
 
-
 #ArrayBlocks
 
 ## Instructions
@@ -19,7 +18,7 @@ Here we've made a call to `enumerateObjectsUsingBlock` that will print each valu
 
 ######Example
 ```objc
-[NSPredicate *evenPredicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings){
+NSPredicate *evenPredicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings){
         return [evaluatedObject integerValue] % 2 == 0;
     }];
     
