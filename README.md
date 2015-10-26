@@ -27,22 +27,24 @@ NSArray *filteredResultsArrayTwo = [resultsArray filteredArrayUsingPredicate:eve
 
 Here we have created a predicate that will return only even numbers of our array. As above, be careful; this block does not consider the possibility that your array contains objects that do not respond to the method `integerValue`! 
 
-**Now it's your turn**: Try writing your own methods that take blocks of code to mimic the capabilities of these two functions for `NSArray` objects. Your methods should extend the NSArray class (via a category) and will be called `mapWithBlock:` (our form of `enumerateObjectsUsingBlock:`) and `selectWithBlock:` (our form of `filteredArrayUsingPredicate:` + `predicateUsingBlock:`). The arguments should be the blocks.
+**Now it's your turn**: Try writing your own methods that take blocks of code to mimic the capabilities of these two functions for `NSArray` objects. Your methods should extend the NSArray class (via a category called "Enumeration") and will be called `arrayByApplyingBlock:` (our form of `enumerateObjectsUsingBlock:`, with a twist) and `elementsSatisfyingBlock:` (our form of `filteredArrayUsingPredicate:` + `predicateUsingBlock:`). The arguments should be the blocks.
 
 Some additional notes:
 
-1) For our equivalent of `enumerateObjectsUsingBlock` do not concern yourself with adding in the `BOOL *` argument for the basic version.
+1) `arrayByApplyingBlock:` should take a block and return an array that consists of the result of applying that block to each element in the receiver. For instance, passing a block that multiplies an element by 2 would return an array with each element from the original array, doubled.
 
-2) `selectWithBlock:` should be built as an instance method, and should take the predictate block directly, rather than an `NSPredicate`.
+2) For `arrayByApplyingBlock:`, do not concern yourself with adding in the `BOOL *` argument for the basic version.
+
+2) `elementsSatisfyingBlock:` should take the predictate block directly, rather than an `NSPredicate`.
 
 Go!
 
 
 ##Advanced
 
-Now add in the `BOOL *` argument for `mapWithBlock:`. Note: This will not further your understanding of blocks, but it will teach you a little bit more about memory addresses.
+Now add in the `BOOL *` argument for `arrayByApplyingBlock:`. Note: This will not further your understanding of blocks, but it will teach you a little bit more about memory addresses.
 
-Further reading for ```BOOL *```:  
+Further reading for ```BOOL *```:
 <a href="http://www.drdobbs.com/mobile/pointers-in-objective-c/225700236?pgno=1">
 Blog post</a>  
 <a href="http://stackoverflow.com/questions/6546214/when-we-need-pointer-of-bool-variable-in-objective-c/6546351#6546351">
